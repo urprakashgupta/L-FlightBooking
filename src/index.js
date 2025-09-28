@@ -1,12 +1,16 @@
 const express = require('express');
-const { PORT } = require("./config")
+const { serverConfig } = require("./config");
+const apiRoutes = require('./routes');
+
+
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send("hello from the server frow new account");
-});
+app.use('/api', apiRoutes);
 
-app.listen(PORT, () => {
-    console.log(`server is running on port ${PORT}`);
+
+
+
+app.listen(serverConfig.PORT, () => {
+    console.log(`server is running on port ${serverConfig.PORT}`);
 
 })
