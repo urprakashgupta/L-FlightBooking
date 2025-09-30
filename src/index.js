@@ -7,9 +7,6 @@ const app = express();
 
 app.use('/api', apiRoutes);
 
-
-
-
 app.listen(serverConfig.PORT, () => {
     console.log(`server is running on port ${serverConfig.PORT}`);
 
